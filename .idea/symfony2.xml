@@ -4,5 +4,6 @@
     <option name="pathToUrlGenerator" value="var/cache/dev/appDevUrlGenerator.php" />
     <option name="pathToTranslation" value="var/cache/dev/translations" />
     <option name="pluginEnabled" value="true" />
+    <option name="lastServiceGeneratorLanguage" value="yaml" />
   </component>
 </project>

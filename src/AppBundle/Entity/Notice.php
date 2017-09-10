@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -54,8 +55,12 @@ class Notice
      *
      * @ORM\Column(name="status", type="string", length=255)
      */
-    private $status;
+    private $status = 'active';
 
+    public function __construct()
+    {
+        $this->creationDate = (new DateTime());
+    }
 
     /**
      * Get id
