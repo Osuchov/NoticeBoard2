@@ -57,6 +57,11 @@ class Notice
      */
     private $status = 'active';
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="noticeId")
+     */
+    private $comments;
+
     public function __construct()
     {
         $this->creationDate = (new DateTime());

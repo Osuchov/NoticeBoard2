@@ -1,10 +1,12 @@
 {% block body %}
     {% for notice in notices %}
-        <p>{{ notice.title }} created {{ notice.creationDate|date('Y-m-d\\ H:i:s') }}<br>
-            {{ notice.description }}<br>
-            Expires: {{ notice.dueDate|date('Y-m-d\\ H:i:s') }}
-        </p><br>
+        {% if notice.status == 'active' %}
+            <p>{{ notice.title }} created {{ notice.creationDate|date('Y-m-d\\ H:i:s') }}<br>
+                {{ notice.description }}<br>
+                Expires: {{ notice.dueDate|date('Y-m-d\\ H:i:s') }}
+            </p><br>
+        {% endif %}
     {% else %}
-        <p>No notices yet.</p><br>
+        <p>No active yet.</p><br>
     {% endfor %}
 {% endblock %}
