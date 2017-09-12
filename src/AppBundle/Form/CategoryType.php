@@ -3,18 +3,18 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class NoticeType extends AbstractType
+class CategoryType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title')->add('description')->add('dueDate')->add('categories', null, ['choice_label' =>'name']);
+        $builder->add('name');
     }
     
     /**
@@ -23,7 +23,7 @@ class NoticeType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Notice',
+            'data_class' => 'AppBundle\Entity\Category'
         ));
     }
 
@@ -32,6 +32,8 @@ class NoticeType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_notice';
+        return 'appbundle_category';
     }
+
+
 }

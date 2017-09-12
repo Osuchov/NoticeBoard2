@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -62,9 +63,16 @@ class Notice
      */
     private $comments;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Category", inversedBy="notices")
+     * @ORM\JoinTable(name="notice_category")
+     */
+    private $categories;
+
     public function __construct()
     {
         $this->creationDate = (new DateTime());
+        $this->categories = new ArrayCollection();
     }
 
     /**
@@ -196,5 +204,38 @@ class Notice
     {
         return $this->status;
     }
-}
 
+    /**
+     * Add comment
+     *
+     * @param \AppBundle\Entity\Comment $comment
+     *
+     * @return Notice
+     */
+    public function addComment(\AppBundle\Entity\Comment $comment)
+    {
+        $this->comments[] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Remove comment
+     *
+     * @param \AppBundle\Entity\Comment $comment
+     */
+    public function removeComment(\AppBundle\Entity\Comment $comment)
+    {
+        $this->comments->removeElement($comment);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+}

@@ -25,7 +25,7 @@ class Comment
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Notice", inversedBy="comments")
      */
-    private $noticeId;
+    private $notice;
 
     /**
      * @var string

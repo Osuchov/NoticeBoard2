@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -58,13 +59,20 @@ class Notice
     private $status = 'active';
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="noticeId")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="notice")
      */
     private $comments;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Category", inversedBy="notices")
+     * @ORM\JoinTable(name="notice_category")
+     */
+    private $categories;
 
     public function __construct()
     {
         $this->creationDate = (new DateTime());
+        $this->categories = new ArrayCollection();
     }
 
     /**
@@ -229,5 +237,39 @@ class Notice
     public function getComments()
     {
         return $this->comments;
+    }
+
+    /**
+     * Add category
+     *
+     * @param \AppBundle\Entity\Category $category
+     *
+     * @return Notice
+     */
+    public function addCategory(\AppBundle\Entity\Category $category)
+    {
+        $this->categories[] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Remove category
+     *
+     * @param \AppBundle\Entity\Category $category
+     */
+    public function removeCategory(\AppBundle\Entity\Category $category)
+    {
+        $this->categories->removeElement($category);
+    }
+
+    /**
+     * Get categories
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCategories()
+    {
+        return $this->categories;
     }
 }
