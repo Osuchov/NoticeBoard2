@@ -71,5 +71,38 @@ class Category
     {
         return $this->name;
     }
-}
 
+    /**
+     * Add notice
+     *
+     * @param \AppBundle\Entity\Notice $notice
+     *
+     * @return Category
+     */
+    public function addNotice(\AppBundle\Entity\Notice $notice)
+    {
+        $this->notices[] = $notice;
+
+        return $this;
+    }
+
+    /**
+     * Remove notice
+     *
+     * @param \AppBundle\Entity\Notice $notice
+     */
+    public function removeNotice(\AppBundle\Entity\Notice $notice)
+    {
+        $this->notices->removeElement($notice);
+    }
+
+    /**
+     * Get notices
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getNotices()
+    {
+        return $this->notices;
+    }
+}

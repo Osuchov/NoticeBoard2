@@ -125,4 +125,28 @@ class Comment
     {
         return $this->text;
     }
+
+    /**
+     * Set notice
+     *
+     * @param \AppBundle\Entity\Notice $notice
+     *
+     * @return Comment
+     */
+    public function setNotice(\AppBundle\Entity\Notice $notice = null)
+    {
+        $this->notice = $notice;
+
+        return $this;
+    }
+
+    /**
+     * Get notice
+     *
+     * @return \AppBundle\Entity\Notice
+     */
+    public function getNotice()
+    {
+        return $this->notice;
+    }
 }

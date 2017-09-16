@@ -7,8 +7,10 @@
                 <a href="{{ path('app_comment_newcomment', {'id': notice.id}) }}"><button type="submit">Comment</button></a>
             </p>
             {% for comment in notice.comments %}
-                <p>{{ comment.text }}</p>
+                <p>{{ comment.text }}<br>
+                Written: {{ comment.creationDate|date('Y-m-d\\ H:i:s') }}</p>
             {% endfor %}
+            <hr>
         {% endif %}
     {% else %}
         <p>No active yet.</p><br>

@@ -25,7 +25,7 @@ class Comment
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Notice", inversedBy="comments")
      */
-    private $noticeId;
+    private $notice;
 
     /**
      * @var string
@@ -61,9 +61,9 @@ class Comment
      *
      * @return Comment
      */
-    public function setNoticeId($noticeId)
+    public function setNoticeId($notice)
     {
-        $this->noticeId = $noticeId;
+        $this->notice = $notice;
 
         return $this;
     }
@@ -75,7 +75,7 @@ class Comment
      */
     public function getNoticeId()
     {
-        return $this->noticeId;
+        return $this->notice;
     }
 
     /**
