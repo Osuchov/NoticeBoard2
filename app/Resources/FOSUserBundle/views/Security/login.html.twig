@@ -1,0 +1,7 @@
+{%  extends '::base.html.twig' %}
+
+{% block body %}
+    <p>Welcome! Please use login panel below to view The Notice Board.</p>
+    <p>To register please use <a href={{ path('fos_user_registration_register') }}>registration form</a>.</p>
+    {{ include ('@FOSUser/Security/login_content.html.twig') }}
+{% endblock %}
