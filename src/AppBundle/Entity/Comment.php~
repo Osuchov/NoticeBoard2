@@ -39,6 +39,11 @@ class Comment
      */
     private $creationDate;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="comments")
+     */
+    private $user;
+
     public function __construct()
     {
         $this->creationDate = (new DateTime());

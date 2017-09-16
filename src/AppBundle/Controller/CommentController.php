@@ -19,6 +19,12 @@ class CommentController extends Controller
     {
         $comment = new Comment();
 
+        $user = $this->getUser();
+
+        if (!$user) {
+            throw $this->createNotFoundException('User not found.');
+        }
+
         $notice = $this
             ->getDoctrine()
             ->getRepository('AppBundle:Notice')
@@ -29,7 +35,9 @@ class CommentController extends Controller
         }
 
         $comment->setNoticeId($notice);
+        $comment->setUser($user);
         $notice->addComment($comment);
+        $user->addComment($comment);
 
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);
@@ -42,6 +50,6 @@ class CommentController extends Controller
             return $this->redirectToRoute('app_notice_index');
         }
 
-        return['form' => $form->createView(), 'notice' => $notice, 'comment' => $comment];
+        return['form' => $form->createView(), 'notice' => $notice, 'comment' => $comment, 'user' => $user];
     }
 }
