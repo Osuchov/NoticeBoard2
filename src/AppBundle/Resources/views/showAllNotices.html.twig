@@ -1,7 +1,7 @@
 {% block body %}
     {% for notice in notices %}
         {% if notice.status == 'active' %}
-            <p>"{{ notice.title }}" created {{ notice.creationDate|date('Y-m-d\\ H:i:s') }}<br>
+            <p>"{{ notice.title }}" by <b>{{ notice.user }} </b> created {{ notice.creationDate|date('Y-m-d\\ H:i:s') }}<br>
                 {{ notice.description }}<br>
                 Expires: {{ notice.dueDate|date('Y-m-d\\ H:i:s') }}<br>
                 <a href="{{ path('app_comment_newcomment', {'id': notice.id}) }}"><button type="submit">Comment</button></a>

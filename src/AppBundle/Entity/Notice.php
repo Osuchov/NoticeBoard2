@@ -69,6 +69,12 @@ class Notice
      */
     private $categories;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="notices")
+     */
+    private $user;
+
+
     public function __construct()
     {
         $this->creationDate = (new DateTime());
@@ -271,5 +277,29 @@ class Notice
     public function getCategories()
     {
         return $this->categories;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Notice
+     */
+    public function setUser(\AppBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

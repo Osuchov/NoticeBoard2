@@ -2,11 +2,16 @@
 
 {% block body %}
     {% block headers %}
+        Logged in as:
+        {%if is_granted("IS_AUTHENTICATED_REMEMBERED")%}
+            {{app.user.username}} <a href="{{ path('fos_user_security_logout') }}">Logout</a>
+        {% endif %}
         <h1>Welcome to the Notice Board!</h1>
         <h2>Add, browse and comment notices below!</h2>
     {% endblock %}
 
 {# new notice form #}
+
 {% include 'AppBundle::newNotice.html.twig' %}<br><br>
 
 {# show all notices #}

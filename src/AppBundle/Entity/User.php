@@ -22,6 +22,16 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $description;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Notice", mappedBy="user")
+     */
+    private $notices;
+
     public function __construct()
     {
         parent::__construct();
@@ -35,5 +45,63 @@ class User extends BaseUser
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return User
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Add notice
+     *
+     * @param \AppBundle\Entity\Notice $notice
+     *
+     * @return User
+     */
+    public function addNotice(\AppBundle\Entity\Notice $notice)
+    {
+        $this->notices[] = $notice;
+
+        return $this;
+    }
+
+    /**
+     * Remove notice
+     *
+     * @param \AppBundle\Entity\Notice $notice
+     */
+    public function removeNotice(\AppBundle\Entity\Notice $notice)
+    {
+        $this->notices->removeElement($notice);
+    }
+
+    /**
+     * Get notices
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getNotices()
+    {
+        return $this->notices;
     }
 }

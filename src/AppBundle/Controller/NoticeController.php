@@ -20,6 +20,15 @@ class NoticeController extends Controller
     {
         $notice = new Notice();
 
+        $user = $this->getUser();//$this->container->get('security.context')->getToken()->getUser();
+
+        if (!$user) {
+            throw $this->createNotFoundException('User not found.');
+        }
+
+        $notice->setUser($user);
+        $user->addNotice($notice);
+
         $form = $this->createForm(NoticeType::class, $notice);
         $form->handleRequest($request);
 
