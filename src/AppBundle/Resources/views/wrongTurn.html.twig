@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Y U do dis?<br>
+    Keep your filthy hands off it!</h1>
+    <img src="{{ asset('images/yu.jpg') }}" alt="Y U do dis" height="500" width="500">
+    <br>
+    <a href={{ path('app_notice_index')}}><button type="submit">Main page</button></a>
+{% endblock %}

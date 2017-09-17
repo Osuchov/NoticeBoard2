@@ -7,6 +7,7 @@ use AppBundle\Form\CommentType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CommentController extends Controller
@@ -51,5 +52,63 @@ class CommentController extends Controller
         }
 
         return['form' => $form->createView(), 'notice' => $notice, 'comment' => $comment, 'user' => $user];
+    }
+
+    /**
+     * @Route("/del/{id}")
+     */
+    public function deleteCommentAction($id)
+    {
+        $comment = $this
+            ->getDoctrine()
+            ->getRepository('AppBundle:Comment')
+            ->find($id);
+
+        if (!$comment) {
+            throw $this->createNotFoundException('Comment not found');
+        }
+
+        if ($this->getUser() == $comment->getUser()) {
+            $em = $this
+                ->getDoctrine()
+                ->getManager();
+
+            $em->remove($comment);
+            $em->flush();
+
+            return $this->redirectToRoute('app_notice_index');
+        }
+        else {
+            //throw $this->createNotFoundException('This is not your comment. Vay yu do dis?');
+            //return new Response ("<html><body>This is not your comment. Vay yu do dis?</body></html>");
+            return $this->render('@App/wrongTurn.html.twig');
+        }
+    }
+
+    /**
+     * @Route("/editComment/{id}")
+     * @Template("AppBundle::newComment.html.twig")
+     */
+    public function editCommentAction(Request $request, $id)
+    {
+        $comment = $this
+            ->getDoctrine()
+            ->getRepository('AppBundle:Comment')
+            ->find($id);
+
+        if (!$comment) {
+            throw $this->createNotFoundException('Comment not found');
+        }
+
+        $form = $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+
+            return $this->redirectToRoute('app_notice_index');
+        }
+        return['form' => $form->createView()];
     }
 }
