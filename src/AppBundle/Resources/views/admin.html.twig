@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h1>You have been chosen to manage the Notice Board!</h1>
+    <h2>Do not fail the users!</h2>
+    <p>
+        <button>user management</button>
+        <button>notice management</button>
+        <button>comment management</button>
+        <button>category management</button>
+    </p>
+    <a href={{ path('app_notice_index')}}><button type="submit">Main page</button></a>
+{% endblock %}
