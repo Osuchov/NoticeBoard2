@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Notice
@@ -46,7 +47,7 @@ class Notice
 
     /**
      * @var \DateTime
-     *
+     * @Assert\GreaterThan("+1 hours")
      * @ORM\Column(name="due_date", type="datetime")
      */
     private $dueDate;
@@ -65,6 +66,7 @@ class Notice
 
     /**
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Category", inversedBy="notices")
+     * @Assert\NotNull()
      * @ORM\JoinTable(name="notice_category")
      */
     private $categories;

@@ -55,7 +55,7 @@ class CommentController extends Controller
     }
 
     /**
-     * @Route("/del/{id}")
+     * @Route("/delComment/{id}")
      */
     public function deleteCommentAction($id)
     {

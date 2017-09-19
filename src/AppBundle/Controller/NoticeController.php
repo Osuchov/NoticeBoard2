@@ -47,4 +47,60 @@ class NoticeController extends Controller
 
         return['form' => $form->createView(), 'notices' => $notices];
     }
+
+    /**
+     * @Route("/delNotice/{id}")
+     */
+    public function deleteNoticeAction ($id)
+    {
+        $notice = $this
+            -> getDoctrine()
+            -> getRepository('AppBundle:Notice')
+            -> find($id);
+
+        if (!$notice) {
+            throw $this->createNotFoundException('Notice not found');
+        }
+
+        if ($this->getUser() == $notice->getUser()) {
+            $em = $this
+                ->getDoctrine()
+                ->getManager();
+
+            $em->remove($notice);
+            $em->flush();
+
+            return $this->redirectToRoute('app_notice_index');
+        }
+        else {
+            return $this->render('@App/wrongTurn.html.twig');
+        }
+    }
+
+    /**
+     * @Route("/editNotice/{id}")
+     * @Template("@App/newNotice.html.twig")
+     */
+    public function editNoticeAction(Request $request, $id)
+    {
+        $notice = $this->getDoctrine()
+            ->getRepository('AppBundle:Notice')
+            ->find($id);
+
+        if(!$notice) {
+            throw $this->createNotFoundException('Notice not found');
+        }
+
+        $form = $this->createForm(NoticeType::class, $notice);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+
+            return $this->redirectToRoute('app_notice_index');
+        }
+
+        return['form' => $form->createView()];
+    }
 }
