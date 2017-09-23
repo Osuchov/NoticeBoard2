@@ -1,0 +1,8 @@
+{% include '@App/myHeader.html.twig' %}
+
+{% block fos_user_content %}
+    <h1>Use the options below to manage your Notice Board user account!</h1>
+    {% include "@FOSUser/Profile/edit_content.html.twig" %}
+    {% include "@FOSUser/ChangePassword/change_password_content.html.twig" %}
+    <a href={{ path('app_notice_index')}}><button type="submit">Main page</button></a>
+{% endblock fos_user_content %}

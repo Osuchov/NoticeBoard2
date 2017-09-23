@@ -5,7 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Component\HttpFoundation\Response;
+
 
 class UserController extends Controller
 {
@@ -21,4 +21,41 @@ class UserController extends Controller
             return $this->render('@App/wrongTurn.html.twig');
         }
     }
+
+    /**
+     * @Route("/user")
+     * @Template("@App/user.html.twig")
+     */
+    public function userPanelAction()
+    {
+        $user = $this->getUser();
+
+        if (!$user) {
+            throw $this->createNotFoundException('User not found.');
+        }
+
+        return ['user'=>$user];
+    }
+
+    /**
+     * @Route("/userNotices")
+     * @Template("@App/userNotices.html.twig")
+     */
+    public function showUserNoticesAction()
+    {
+        $user = $this->getUser();
+
+        if (!$user) {
+            throw $this->createNotFoundException('User not found.');
+        }
+
+        $notices = $this
+            ->getDoctrine()
+            ->getRepository('AppBundle:Notice')
+            ->findBy(['user'=>$this->getUser()]);
+
+        return ['user'=>$user, 'notices'=>$notices];
+    }
+
+
 }

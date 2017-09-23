@@ -1,0 +1,29 @@
+{% include '@App/myHeader.html.twig' %}
+
+<h1>Your Notices:</h1>
+
+{% for notice in notices %}
+    <p>"{{ notice.title }}" by <b>{{ notice.user }} </b> created {{ notice.creationDate|date('Y-m-d\\ H:i:s') }}<br>
+        {{ notice.description }}<br>
+        Expires: {{ notice.dueDate|date('Y-m-d\\ H:i:s') }}
+        {% if app.user.username == notice.user %}
+            <a href="{{ path('app_notice_editnotice', {'id': notice.id}) }}"><button type="submit">Edit Notice</button></a>
+            <a href="{{ path('app_notice_deletenotice', {'id': notice.id}) }}"><button type="submit">Delete Notice</button></a>
+        {% endif %}
+        <a href="{{ path('app_comment_newcomment', {'id': notice.id}) }}"><button type="submit">Comment</button></a>
+    </p>
+    {% if notice.status == 'active' %}
+
+        {% for comment in notice.comments %}
+            <p>{{ comment.text }}<br>
+                By {{ comment.user }}<br>
+                Created: {{ comment.creationDate|date('Y-m-d\\ H:i:s') }}
+                {% if app.user.username == comment.user%}
+                    <a href={{ path('app_comment_editcomment', {'id': comment.id}) }}><button type="submit">Edit comment</button></a>
+                    <a href={{ path('app_comment_deletecomment', {'id': comment.id}) }}><button type="submit">Delete comment</button></a>
+                {% endif %}
+            </p>
+        {% endfor %}
+        <hr>
+    {% endif %}
+{% endfor %}

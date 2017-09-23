@@ -1,0 +1,13 @@
+{%if is_granted("IS_AUTHENTICATED_REMEMBERED")%}
+    {% include '@App/myHeader.html.twig' %}
+{% endif %}
+
+{% block fos_user_content %}
+    <h1>Use the options below to manage your Notice Board user account!</h1>
+    <p>
+        <a href="{{ path('fos_user_profile_edit') }}"><button>profile management</button></a>
+        <a href="{{ path('app_user_showusernotices') }}"><button>notices management</button></a>
+        <button>comments management</button>
+    </p>
+    <a href={{ path('app_notice_index')}}><button type="submit">Main page</button></a>
+{% endblock fos_user_content %}
