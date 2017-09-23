@@ -1,0 +1,12 @@
+{% include '@App/myHeader.html.twig' %}
+
+{% block body %}
+    <h1>Edit Notice Board users!</h1>
+    {% for user in users %}
+        ID. {{ user.id }}: <b>{{ user.username }}</b> e-mail: {{ user.email }} notices: {{ user.notices.count }} comments: {{ user.comments.count }}
+
+        <br>
+    {% endfor %}
+
+{% endblock %}
+

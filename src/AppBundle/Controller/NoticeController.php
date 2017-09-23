@@ -18,9 +18,22 @@ class NoticeController extends Controller
      */
     public function indexAction (Request $request)
     {
-        $notice = new Notice();
+        $notices = $this
+            ->getDoctrine()
+            ->getRepository('AppBundle:Notice')
+            ->findAll();
 
-        $user = $this->getUser();//$this->container->get('security.context')->getToken()->getUser();
+        return['notices' => $notices];
+    }
+
+    /**
+     * @Route("/newNotice")
+     * @Template("AppBundle::newNotice.html.twig")
+     */
+    public function newNoticeAction(Request $request)
+    {
+        $notice = new Notice();
+        $user = $this->getUser();
 
         if (!$user) {
             throw $this->createNotFoundException('User not found.');
@@ -40,12 +53,7 @@ class NoticeController extends Controller
             return $this->redirectToRoute('app_notice_index');
         }
 
-        $notices = $this
-            ->getDoctrine()
-            ->getRepository('AppBundle:Notice')
-            ->findAll();
-
-        return['form' => $form->createView(), 'notices' => $notices];
+        return['form' => $form->createView()];
     }
 
     /**

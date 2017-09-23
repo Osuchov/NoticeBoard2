@@ -1,5 +1,7 @@
+{% include '@App/myHeader.html.twig' %}
+
 {% block form %}
-    <p>Here's your notice creation form:</p>
+    <p>Fill in your Notice Form:</p>
     {{ form_start(form) }}
     {{ form_widget(form) }}
     <input type="submit" value="Post your notice">

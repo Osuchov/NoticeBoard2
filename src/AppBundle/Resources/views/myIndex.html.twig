@@ -9,7 +9,8 @@
 
 {# new notice form #}
 
-{% include 'AppBundle::newNotice.html.twig' %}<br><hr>
+    <h2>Fill in your Notice Form: <a href="{{ path('app_notice_newnotice') }}"><button>New Notice</button></a></h2>
+    <hr>
 
 {# show all notices #}
 {% include 'AppBundle::showAllNotices.html.twig' %}

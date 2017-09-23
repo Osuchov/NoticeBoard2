@@ -23,6 +23,26 @@ class UserController extends Controller
     }
 
     /**
+     * @Route("/admin/editUser")
+     * @Template("@App/adminEditUser.html.twig")
+     */
+    public function adminEditUserAction()
+    {
+        $user = $this->getUser();
+
+        if(!$user->hasRole('ROLE_ADMIN')) {
+            return $this->render('@App/wrongTurn.html.twig');
+        }
+
+        $users = $this
+            ->getDoctrine()
+            ->getRepository('AppBundle:User')
+            ->findAll();
+
+        return ['users'=> $users];
+    }
+
+    /**
      * @Route("/user")
      * @Template("@App/user.html.twig")
      */

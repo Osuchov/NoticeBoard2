@@ -1,3 +1,5 @@
+{% include '@App/myHeader.html.twig' %}
+
 {% block form %}
     <p>"{{ notice.title }}" by <b>{{ notice.user }} </b> created {{ notice.creationDate|date('Y-m-d\\ H:i:s') }}<br>
         {{ notice.description }}<br>
