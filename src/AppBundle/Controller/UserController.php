@@ -57,5 +57,25 @@ class UserController extends Controller
         return ['user'=>$user, 'notices'=>$notices];
     }
 
+    /**
+     * @Route("/userComments")
+     * @Template("@App/userComments.html.twig")
+     */
+    public function showUserCommentsAction()
+    {
+        $user = $this->getUser();
+
+        if (!$user) {
+            throw $this->createNotFoundException('User not found.');
+        }
+
+        $comments = $this
+            ->getDoctrine()
+            ->getRepository('AppBundle:Comment')
+            ->findBy(['user'=>$this->getUser()]);
+
+        return ['user'=>$user, 'comments'=>$comments];
+    }
+
 
 }

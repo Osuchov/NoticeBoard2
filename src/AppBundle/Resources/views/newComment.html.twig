@@ -1,7 +1,12 @@
 {% block form %}
+    <p>"{{ notice.title }}" by <b>{{ notice.user }} </b> created {{ notice.creationDate|date('Y-m-d\\ H:i:s') }}<br>
+        {{ notice.description }}<br>
+        Expires: {{ notice.dueDate|date('Y-m-d\\ H:i:s') }}
+    </p>
+
     <p>Please enter your comment:</p>
     {{ form_start(form) }}
     {{ form_widget(form) }}
-    <input type="submit">
+    <input type="submit" value="comment">
     {{ form_end(form) }}
 {% endblock %}

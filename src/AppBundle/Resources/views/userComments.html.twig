@@ -1,0 +1,19 @@
+{% include '@App/myHeader.html.twig' %}
+
+<h1>Your Comments:</h1>
+
+{% for comment in comments %}
+    <p>"{{ comment.notice.title }}" by <b>{{ comment.notice.user }} </b> created {{ comment.notice.creationDate|date('Y-m-d\\ H:i:s') }}<br>
+        {{ comment.notice.description }}<br>
+        Expires: {{ comment.notice.dueDate|date('Y-m-d\\ H:i:s') }}
+    </p>
+    <p>{{ comment.text }}<br>
+        By {{ comment.user }}<br>
+        Created: {{ comment.creationDate|date('Y-m-d\\ H:i:s') }}
+        {% if app.user.username == comment.user%}
+            <a href={{ path('app_comment_editcomment', {'id': comment.id}) }}><button type="submit">Edit comment</button></a>
+            <a href={{ path('app_comment_deletecomment', {'id': comment.id}) }}><button type="submit">Delete comment</button></a>
+        {% endif %}
+    </p>
+    <hr>
+{% endfor %}

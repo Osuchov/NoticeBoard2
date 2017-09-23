@@ -100,6 +100,8 @@ class CommentController extends Controller
             throw $this->createNotFoundException('Comment not found');
         }
 
+        $notice = $comment->getNotice();
+
         $form = $this->createForm(CommentType::class, $comment);
         $form->handleRequest($request);
 
@@ -109,6 +111,6 @@ class CommentController extends Controller
 
             return $this->redirectToRoute('app_notice_index');
         }
-        return['form' => $form->createView()];
+        return['form' => $form->createView(), 'notice' => $notice, 'comment' => $comment];
     }
 }
