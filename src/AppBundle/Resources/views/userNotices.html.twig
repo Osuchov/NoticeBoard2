@@ -12,8 +12,6 @@
         {% endif %}
         <a href="{{ path('app_comment_newcomment', {'id': notice.id}) }}"><button type="submit">Comment</button></a>
     </p>
-    {% if notice.status == 'active' %}
-
         {% for comment in notice.comments %}
             <p>{{ comment.text }}<br>
                 By {{ comment.user }}<br>
@@ -25,5 +23,4 @@
             </p>
         {% endfor %}
         <hr>
-    {% endif %}
 {% endfor %}
