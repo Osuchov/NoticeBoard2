@@ -99,14 +99,20 @@ class NoticeController extends Controller
             throw $this->createNotFoundException('Notice not found');
         }
 
+        if ($this->getUser() == $notice->getUser()) {
         $form = $this->createForm(NoticeType::class, $notice);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->flush();
+            if($form->isSubmitted() && $form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->flush();
 
-            return $this->redirectToRoute('app_notice_index');
+                return $this->redirectToRoute('app_notice_index');
+            }
+
+        }
+        else {
+            return $this->render('@App/wrongTurn.html.twig');
         }
 
         return['form' => $form->createView()];

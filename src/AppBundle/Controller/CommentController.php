@@ -102,14 +102,21 @@ class CommentController extends Controller
 
         $notice = $comment->getNotice();
 
-        $form = $this->createForm(CommentType::class, $comment);
-        $form->handleRequest($request);
+        if ($this->getUser() == $comment->getUser()) {
+            $form = $this->createForm(CommentType::class, $comment);
+            $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->flush();
+            if ($form->isSubmitted() && $form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $em->flush();
 
-            return $this->redirectToRoute('app_notice_index');
+                return $this->redirectToRoute('app_notice_index');
+            }
+        }
+        else {
+            //throw $this->createNotFoundException('This is not your comment. Vay yu do dis?');
+            //return new Response ("<html><body>This is not your comment. Vay yu do dis?</body></html>");
+            return $this->render('@App/wrongTurn.html.twig');
         }
         return['form' => $form->createView(), 'notice' => $notice, 'comment' => $comment];
     }
