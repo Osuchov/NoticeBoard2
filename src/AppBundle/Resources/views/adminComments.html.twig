@@ -1,0 +1,15 @@
+{% include '@App/myHeader.html.twig' %}
+
+{% block body %}
+    <h1>Edit Notice Board comments!</h1>
+    {% for comment in comments %}
+        ID. {{ comment.id }}:
+        Notice ID: {{ comment.notice.id }}
+        Author: <b>{{ comment.user.username }}</b>
+        Created: {{ comment.creationDate|date('Y-m-d\\ H:i:s') }}
+        <a href="{{ path('app_comment_editcomment', {'id': comment.id}) }}"><button>Edit Comment</button></a>
+        <a href="{{ path('app_comment_deletecomment', {'id': comment.id}) }}"><button>Delete Comment</button></a>
+        <br>
+    {% endfor %}
+
+{% endblock %}

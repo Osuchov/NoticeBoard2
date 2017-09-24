@@ -63,6 +63,26 @@ class UserController extends Controller
     }
 
     /**
+     * @Route("/admin/comments")
+     * @Template("@App/adminComments.html.twig")
+     */
+    public function adminEditCommentsAction()
+    {
+        $user = $this->getUser();
+
+        if(!$user->hasRole('ROLE_ADMIN')) {
+            return $this->render('@App/wrongTurn.html.twig');
+        }
+
+        $comments = $this
+            ->getDoctrine()
+            ->getRepository('AppBundle:Comment')
+            ->findAll();
+
+        return ['comments'=> $comments];
+    }
+
+    /**
      * @Route("/user")
      * @Template("@App/user.html.twig")
      */

@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71e85df2-772a-47f0-8c01-41151fc29c11" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/adminNotices.html.twig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/adminEditUser.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/adminUsers.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/adminComments.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/admin.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/admin.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/userComments.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/userComments.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/userNotices.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/userNotices.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,11 +22,12 @@
       <file leaf-file-name="admin.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/admin.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="51" lean-forward="false" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+            <state relative-caret-position="144">
+              <caret line="8" column="98" lean-forward="false" selection-start-line="8" selection-start-column="98" selection-end-line="8" selection-end-column="98" />
               <folding>
                 <element signature="e#190#212#0#Twig" expanded="true" />
                 <element signature="e#282#307#0#Twig" expanded="true" />
+                <element signature="e#379#405#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,74 +62,58 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="81" column="34" lean-forward="false" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
+            <state relative-caret-position="302">
+              <caret line="76" column="25" lean-forward="false" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
               <folding>
                 <element signature="e#40#102#0#PHP" expanded="true" />
                 <element signature="e#801#827#1#PHP" expanded="true" />
                 <element signature="e#920#936#1#PHP" expanded="true" />
                 <element signature="e#1265#1291#1#PHP" expanded="true" />
                 <element signature="e#1386#1404#1#PHP" expanded="true" />
-                <element signature="e#2634#2653#1#PHP" expanded="true" />
+                <element signature="e#1740#1766#1#PHP" expanded="true" />
+                <element signature="e#1862#1881#1#PHP" expanded="true" />
+                <element signature="e#3113#3132#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userNotices.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/userNotices.html.twig">
+      <file leaf-file-name="adminComments.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/adminComments.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="71" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="71" />
+            <state relative-caret-position="252">
+              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
               <folding>
                 <element signature="e#12#35#0#Twig" expanded="true" />
-                <element signature="e#412#433#0#Twig" expanded="true" />
+                <element signature="e#349#372#0#Twig" expanded="true" />
+                <element signature="e#459#484#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoticeController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/NoticeController.php">
+      <file leaf-file-name="userComments.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/userComments.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="88" column="22" lean-forward="false" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="108">
+              <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+              <folding>
+                <element signature="e#12#35#0#Twig" expanded="true" />
+                <element signature="e#594#617#0#Twig" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="adminNotices.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="adminNotices.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/adminNotices.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+              <caret line="15" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="14" />
               <folding>
                 <element signature="e#12#35#0#Twig" expanded="true" />
                 <element signature="e#397#418#0#Twig" expanded="true" />
                 <element signature="e#503#526#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="showAllNotices.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/showAllNotices.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="117" lean-forward="false" selection-start-line="3" selection-start-column="95" selection-end-line="3" selection-end-column="117" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adminUsers.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/adminUsers.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="14" />
-              <folding>
-                <element signature="e#12#35#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -188,9 +170,10 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/adminUsers.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/userNotices.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/userComments.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/admin.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/adminNotices.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/admin.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/adminComments.html.twig" />
       </list>
     </option>
   </component>
@@ -494,12 +477,12 @@
       <workItem from="1505556975550" duration="39200000" />
       <workItem from="1506151615134" duration="6883000" />
       <workItem from="1506160065663" duration="724000" />
-      <workItem from="1506161066754" duration="23211000" />
+      <workItem from="1506161066754" duration="24271000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107802000" />
+    <option name="totallyTimeSpent" value="108862000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="-4" width="1863" height="1084" extended-state="6" />
@@ -538,14 +521,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/NoticeType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="36" column="1" lean-forward="false" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Model/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4338">
@@ -847,17 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/userComments.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-          <folding>
-            <element signature="e#12#35#0#Twig" expanded="true" />
-            <element signature="e#594#617#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Profile/edit_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -884,32 +848,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/adminUsers.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="14" />
-          <folding>
-            <element signature="e#12#35#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/showAllNotices.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="117" lean-forward="false" selection-start-line="3" selection-start-column="95" selection-end-line="3" selection-end-column="117" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/admin.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="51" lean-forward="false" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
-          <folding>
-            <element signature="e#190#212#0#Twig" expanded="true" />
-            <element signature="e#282#307#0#Twig" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -921,21 +864,6 @@
             <element signature="e#67#90#0#Twig" expanded="true" />
             <element signature="e#248#269#0#Twig" expanded="true" />
             <element signature="e#439#464#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="81" column="34" lean-forward="false" selection-start-line="81" selection-start-column="34" selection-end-line="81" selection-end-column="34" />
-          <folding>
-            <element signature="e#40#102#0#PHP" expanded="true" />
-            <element signature="e#801#827#1#PHP" expanded="true" />
-            <element signature="e#920#936#1#PHP" expanded="true" />
-            <element signature="e#1265#1291#1#PHP" expanded="true" />
-            <element signature="e#1386#1404#1#PHP" expanded="true" />
-            <element signature="e#2634#2653#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -958,13 +886,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/userNotices.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/adminUsers.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="71" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="71" />
+        <state relative-caret-position="198">
+          <caret line="11" column="14" lean-forward="true" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
           <folding>
             <element signature="e#12#35#0#Twig" expanded="true" />
-            <element signature="e#412#433#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -972,11 +899,74 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/adminNotices.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <caret line="15" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="14" />
           <folding>
             <element signature="e#12#35#0#Twig" expanded="true" />
             <element signature="e#397#418#0#Twig" expanded="true" />
             <element signature="e#503#526#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="98" lean-forward="false" selection-start-line="8" selection-start-column="98" selection-end-line="8" selection-end-column="98" />
+          <folding>
+            <element signature="e#190#212#0#Twig" expanded="true" />
+            <element signature="e#282#307#0#Twig" expanded="true" />
+            <element signature="e#379#405#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/userNotices.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="12" lean-forward="true" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+          <folding>
+            <element signature="e#12#35#0#Twig" expanded="true" />
+            <element signature="e#412#433#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/userComments.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+          <folding>
+            <element signature="e#12#35#0#Twig" expanded="true" />
+            <element signature="e#594#617#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="76" column="25" lean-forward="false" selection-start-line="76" selection-start-column="25" selection-end-line="76" selection-end-column="25" />
+          <folding>
+            <element signature="e#40#102#0#PHP" expanded="true" />
+            <element signature="e#801#827#1#PHP" expanded="true" />
+            <element signature="e#920#936#1#PHP" expanded="true" />
+            <element signature="e#1265#1291#1#PHP" expanded="true" />
+            <element signature="e#1386#1404#1#PHP" expanded="true" />
+            <element signature="e#1740#1766#1#PHP" expanded="true" />
+            <element signature="e#1862#1881#1#PHP" expanded="true" />
+            <element signature="e#3113#3132#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/adminComments.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding>
+            <element signature="e#12#35#0#Twig" expanded="true" />
+            <element signature="e#349#372#0#Twig" expanded="true" />
+            <element signature="e#459#484#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
