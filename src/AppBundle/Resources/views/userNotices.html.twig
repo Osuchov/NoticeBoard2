@@ -6,6 +6,9 @@
     <p>"{{ notice.title }}" by <b>{{ notice.user }} </b> created {{ notice.creationDate|date('Y-m-d\\ H:i:s') }}<br>
         {{ notice.description }}<br>
         Expires: {{ notice.dueDate|date('Y-m-d\\ H:i:s') }}
+        Categories: {% for category in notice.categories %}
+            | {{ category.name }} |
+        {% endfor %}
         {% if app.user.username == notice.user %}
             <a href="{{ path('app_notice_editnotice', {'id': notice.id}) }}"><button type="submit">Edit Notice</button></a>
             <a href="{{ path('app_notice_deletenotice', {'id': notice.id}) }}"><button type="submit">Delete Notice</button></a>
