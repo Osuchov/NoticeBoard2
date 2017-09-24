@@ -1,0 +1,15 @@
+{% include '@App/myHeader.html.twig' %}
+
+{% block body %}
+    <h1>Edit Notice Board categories!</h1>
+    <h2>Add a new category: <a href="{{ path('app_category_newcategory') }}"><button>New Category</button></a></h2>
+    {% for category in categories | sort %}
+        ID. {{ category.id }}:
+        Name: "<b>{{ category.name }}</b>"
+        Used: {{ category.notices.count }} notice(s)
+        <a href="{{ path('app_category_editcategory', {'id': category.id}) }}"><button>Edit Category</button></a>
+        <a href="{{ path('app_category_deletecategory', {'id': category.id}) }}"><button>Delete Category</button></a>
+        <br>
+    {% endfor %}
+
+{% endblock %}

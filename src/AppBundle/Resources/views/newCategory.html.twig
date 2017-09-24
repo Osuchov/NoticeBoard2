@@ -1,0 +1,9 @@
+{% include '@App/myHeader.html.twig' %}
+
+{% block form %}
+    <p>Add or edit a notice category:</p>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="Submit">
+    {{ form_end(form) }}
+{% endblock %}

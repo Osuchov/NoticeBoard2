@@ -83,6 +83,26 @@ class UserController extends Controller
     }
 
     /**
+     * @Route("/admin/categories")
+     * @Template("@App/adminCategories.html.twig")
+     */
+    public function adminEditCategoriesAction()
+    {
+        $user = $this->getUser();
+
+        if(!$user->hasRole('ROLE_ADMIN')) {
+            return $this->render('@App/wrongTurn.html.twig');
+        }
+
+        $categories = $this
+            ->getDoctrine()
+            ->getRepository('AppBundle:Category')
+            ->findAll();
+
+        return ['categories'=> $categories];
+    }
+
+    /**
      * @Route("/user")
      * @Template("@App/user.html.twig")
      */
