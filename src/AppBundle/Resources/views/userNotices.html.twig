@@ -1,6 +1,6 @@
 {% include '@App/myHeader.html.twig' %}
 
-<h1>Your Notices:</h1>
+<h1>Your Notices: {{ user.notices.count }}</h1>
 
 {% for notice in notices %}
     <p>"{{ notice.title }}" by <b>{{ notice.user }} </b> created {{ notice.creationDate|date('Y-m-d\\ H:i:s') }}<br>

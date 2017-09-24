@@ -1,6 +1,6 @@
 {% include '@App/myHeader.html.twig' %}
 
-<h1>Your Comments:</h1>
+<h1>Your Comments: {{ user.comments.count }}</h1>
 
 {% for comment in comments %}
     <p>"{{ comment.notice.title }}" by <b>{{ comment.notice.user }} </b> created {{ comment.notice.creationDate|date('Y-m-d\\ H:i:s') }}<br>

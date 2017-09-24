@@ -4,9 +4,9 @@
     <h1>Edit Notice Board users!</h1>
     {% for user in users %}
         ID. {{ user.id }}: <b>{{ user.username }}</b> e-mail: {{ user.email }} notices: {{ user.notices.count }} comments: {{ user.comments.count }}
-
+        <a href=""><button>Edit User</button></a>
+        <a href=""><button>Delete User</button></a>
         <br>
     {% endfor %}
 
 {% endblock %}
-

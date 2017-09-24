@@ -23,8 +23,8 @@ class UserController extends Controller
     }
 
     /**
-     * @Route("/admin/editUser")
-     * @Template("@App/adminEditUser.html.twig")
+     * @Route("/admin/users")
+     * @Template("@App/adminUsers.html.twig")
      */
     public function adminEditUserAction()
     {
@@ -40,6 +40,26 @@ class UserController extends Controller
             ->findAll();
 
         return ['users'=> $users];
+    }
+
+    /**
+     * @Route("/admin/notices")
+     * @Template("@App/adminNotices.html.twig")
+     */
+    public function adminEditNoticesAction()
+    {
+        $user = $this->getUser();
+
+        if(!$user->hasRole('ROLE_ADMIN')) {
+            return $this->render('@App/wrongTurn.html.twig');
+        }
+
+        $notices = $this
+            ->getDoctrine()
+            ->getRepository('AppBundle:Notice')
+            ->findAll();
+
+        return ['notices'=> $notices];
     }
 
     /**
